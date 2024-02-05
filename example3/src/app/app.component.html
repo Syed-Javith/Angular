@@ -1,0 +1,52 @@
+<form #form="ngForm">
+  <input type="text" (change)="change(form)" name="formList" ngModel #formList="ngModel">
+</form>
+
+<ul>
+  <li *ngFor="let l of list">{{l}}</li>
+</ul>
+
+<form [formGroup]="reactiveForm">
+  Name : <input type="text" name="name" id="name" formControlName="name"><br>
+
+  <div *ngIf="reactiveForm.controls.name.touched && reactiveForm.controls.name.invalid">
+    <div *ngIf="reactiveForm.controls.name.hasError('minlength')">
+      <p [ngClass]="'warning'">Minimum length required</p>
+    </div>
+    <div *ngIf="reactiveForm.controls.name.hasError('required')">
+      <p [ngClass]="'warning'">Name required</p>
+    </div>
+  </div>
+
+  Email : <input type="email" name="email" id="email" formControlName="email">
+ 
+ 
+  <div *ngIf="reactiveForm.controls.email.touched && reactiveForm.controls.email.invalid">
+    <div *ngIf="reactiveForm.controls.email.hasError('required')">
+      <p [ngClass]="'warning'">Email required</p>
+    </div>
+  </div>
+</form>
+
+
+<form (submit)="onChange(form)" #form="ngForm">
+  name: <input type="text" name="name" id="name" ngModel #name="ngModel" (change)="onChange(form)" minlength="6" maxlength="10"><br>
+
+  <div *ngIf="name.touched || name.invalid">
+    <div *ngIf="name.invalid" [ngClass]="{warning : name.invalid}">Please enter your name</div>
+    <div *ngIf="name.hasError('minlength')" [ngClass]="'warning'">length is minimum</div>
+    <div *ngIf="name.hasError('maxlength')" [ngClass]="'warning'">Maxlength reached</div>
+
+  </div>
+
+  password: <input type="password" name="password" ngModel #password="ngModel" (change)="onChange(form)" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><br>
+
+  <div *ngIf="password.touched || password.invalid ">
+    <div *ngIf="password.hasError('pattern')" [ngClass]="'warning'">password not accepted</div>
+  </div>
+
+  <input type="radio" name="gender" id="male" value="male" ngModel #gender="ngModel">Male
+  <input type="radio" name="gender" id="male" value="female" ngModel #gender="ngModel">FeMale
+
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>

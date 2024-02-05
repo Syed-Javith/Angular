@@ -1,0 +1,147 @@
+<div [ngSwitch]="role">
+
+    <div *ngSwitchCase="'employee'">
+        <h1>Employee</h1>
+        <p>you have access only to this </p>
+    </div>
+    <div *ngSwitchCase="'admin'">
+        <h1>Admin</h1>
+        <p>You have complete credentials</p>
+    </div>
+    <div *ngSwitchCase="'customer'">
+        <h1>Customer</h1>
+        <p>You can only view it</p>
+    </div>
+    <div *ngSwitchDefault>
+        <p>No Authorised access</p>
+    </div>
+
+</div>
+<!-- <ul>
+    <li *ngFor="let post of posts; let i = index; let o = odd; let e = even;">
+      {{i}} {{o}} {{e}} {{post}}
+    </li>
+</ul> -->
+
+
+<!-- <h1 [ngStyle]="styles">Hello</h1> -->
+<!-- <h1 [ngClass]="classes">Hello World</h1>
+
+<h1 [ngClass]="classList">Hello World</h1>
+
+
+<h1 [ngClass]="classAsObject">Hello World</h1> -->
+
+
+
+<!-- <ul>
+    <li *ngFor="let post of listOfPosts">{{ post.id }} {{ post.name }}</li>
+</ul> -->
+
+
+<!-- <h3>Date Pipe</h3>
+<p> {{ 'Jun 15, 2015' | date : 'long' }} </p>
+<p> {{ 'Jun 15, 2015' | date : 'short' }} </p>
+<p> {{ 'Jun 15, 2015' | date : 'full' }} </p>
+
+<h3>Uppercase Lowercase</h3>
+<p> {{ "hi" | uppercase }}  {{ "HELLO" | lowercase }}</p>
+
+<h3>Number Currency Percent</h3>
+<p>{{ 1234.56 | currency: 'INR' }}</p>
+
+<p> {{ 1234.56 | number: '5.1-1' }}</p>
+
+<p>{{ 3.6 | percent : '5.1-3' }}</p>
+
+<h3>Slice</h3>
+<p>{{ 'Angular' | slice: 1:4 }}</p>
+
+<h3>Json</h3>
+<p> {{ { name : "abc",id : 200 } | json }}  </p>
+
+ -->
+
+
+
+<!-- <h1 [ngStyle]="styles">Hello</h1> -->
+
+
+<!-- <h1 [ngClass]="classes">Hello World</h1>
+
+<h1 [ngClass]="classList">Hello World</h1>
+
+
+<h1 [ngClass]="classAsObject">Hello World</h1>
+ -->
+
+
+
+
+
+
+
+<!-- <div [ngSwitch]="role">
+
+    <div *ngSwitchCase="'employee'">
+        <h1>Employee</h1>
+        <p>you have access only to this </p>
+    </div>
+    <div *ngSwitchCase="'admin'">
+        <h1>Admin</h1>
+        <p>You have complete credentials</p>
+    </div>
+    <div *ngSwitchCase="'customer'">
+        <h1>Customer</h1>
+        <p>You can only view it</p>
+    </div>
+    <div *ngSwitchDefault>
+        <p>No Authorised access</p>
+    </div>
+
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ul>
+    <li *ngFor="let post of posts; let i = index; let o = odd;">
+        {{ post }} with index {{ i }} and is {{ o ? "odd" : "even" }}
+    </li>
+</ul> -->
+
+
+<!-- <div *ngIf="isAdmin; then admin else user">
+</div>
+
+<ng-template #admin>
+    <h1>Welcome Admin</h1>
+</ng-template>
+<ng-template #user>
+    <h1>Welcome User</h1>
+</ng-template>
+   -->
+
+
+
+
+
+
+<!-- 
+
+<div *ngIf="isAdmin == true">
+    <h1>Welcome Admin</h1>
+</div>
+
+<div *ngIf="isAdmin === false">
+ <h1>Welocme User</h1>
+</div> -->

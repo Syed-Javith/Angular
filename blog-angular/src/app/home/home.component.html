@@ -1,0 +1,48 @@
+<p>home works!</p>
+<div *ngIf="user.length > 0" then #userpanel; else #loginpanel>
+  {{ user }}
+</div>
+
+<ng-template #userpanel>
+  <div>
+    <div>{{ user }}</div>
+    <button (click)="logout()"> logout </button>
+  </div>
+</ng-template>
+
+
+<div class="container">
+    <div *ngFor="let blog of blogs;">
+        <h4>{{ blog.blogTitle }}</h4>
+        <p>{{ blog.blogBody }}</p>
+        <p> {{ blog.userid }} </p>
+    </div>
+</div>
+
+
+<button class="btn btn-sm btn-outline-primary" (click)="open(demoModal)">Launch demo modal</button>
+<ng-template #demoModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="addBlog(form)" #form="ngForm">
+        <div class="form-group">
+          <label for="blogTitle">Blog Title</label>
+          <div class="input-group">
+            <input id="blogTitle" name="blogTitle" class="form-control" placeholder="blog title" ngModel #title='ngModel'>   
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="blogBody">Description</label>
+            <div class="input-group">
+              <input id="blogBody" name="blogBody" class="form-control" placeholder="blog title" ngModel #body='ngModel'>   
+            </div>
+          </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Save</button>
+    </div>
+  </ng-template>
